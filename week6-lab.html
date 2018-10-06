@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>week6 lab</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+      function drawN(startX, startY, height, width, color) { 
+        
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(startX, startY - height);
+        ctx.lineTo(startX+ (3 * (width / 10)), startY - height);
+        ctx.lineTo(startX+ (8 * (width / 10)), startY - (height / 10));
+        ctx.lineTo(startX+ (8 * (width / 10)), startY - height);
+        ctx.lineTo(startX + width, startY - height);
+        ctx.lineTo(startX + width, startY);
+        ctx.lineTo(startX + (7 * (width / 10)), startY);
+        ctx.lineTo(startX + (2 * (width / 10)), startY - height + (height / 10));
+        ctx.lineTo(startX + (2 * (width / 10)), startY);
+        ctx.lineTo(startX, startY);
+        ctx.strokeStyle=color;
+        ctx.stroke();
+      }
+      function drawG(startX, startY, height, width, color) { 
+        
+        ctx.beginPath();
+        ctx.moveTo(startX + width, startY - height);
+        ctx.lineTo(startX, startY - height);
+        ctx.lineTo(startX, startY);
+        ctx.lineTo(startX + width, startY);
+        ctx.lineTo(startX + width, startY - (height / 2));
+        ctx.lineTo(startX + (width / 2), startY - (height / 2));
+        ctx.lineTo(startX + (width / 2), startY - ((4 * height) / 10));
+        ctx.lineTo(startX + ((8 * width) / 10), startY - ((4 * height) / 10));
+        ctx.lineTo(startX + ((8 * width) / 10), startY - ( height) / 10);
+        ctx.lineTo(startX + ((2 * width) / 10), startY - ( height) / 10);
+        ctx.lineTo(startX + ((2 * width) / 10), startY - (( 9 * height) / 10));
+        ctx.lineTo(startX + width, startY - (( 9 * height) / 10));
+        ctx.lineTo(startX + width, startY - height);
+        ctx.strokeStyle=color;
+        ctx.stroke();
+      }
+        
+      function drawA(startX, startY, height, width, color) { 
+        
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(startX, startY - height);
+        ctx.lineTo(startX + width, startY - height);
+        ctx.lineTo(startX + width, startY);
+        ctx.lineTo(startX + (( 8 * width) / 10), startY);
+        ctx.lineTo(startX + (( 8 * width) / 10), startY - (( 5 * height) / 10));
+        ctx.lineTo(startX + (( 2 * width) / 10), startY - (( 5 * height) / 10));
+        ctx.lineTo(startX + (( 2 * width) / 10), startY);
+        ctx.lineTo(startX, startY);
+        ctx.moveTo(startX + (( 2 * width) / 10), startY - (( 6 * height) / 10));
+        ctx.lineTo(startX + (( 2 * width) / 10), startY - (( 9 * height) / 10));
+        ctx.lineTo(startX + (( 8 * width) / 10), startY - (( 9 * height) / 10));
+        ctx.lineTo(startX + (( 8 * width) / 10), startY - (( 6 * height) / 10));
+        ctx.lineTo(startX + (( 2 * width) / 10), startY - (( 6 * height) / 10));
+        ctx.strokeStyle=color;
+        ctx.stroke();
+        
+      }
+      function Main(){
+          drawN(150,250,100,50, "blue");
+          drawG(225,250,100,50, "red");
+          drawA(300,250,100,50, "green");
+      }
+    </script>
+
+  </head>
+  <body>
+
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;color:green;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle="#A7E0E6";
+        ctx.fillRect(0,0,500,500);
+        Main();
+    </script>
+    
+  </body>
+</html>
